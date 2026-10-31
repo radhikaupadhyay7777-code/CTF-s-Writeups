@@ -69,8 +69,9 @@ My documentation focuses on:
 My goal is to maintain a growing technical knowledge base while sharing insights that may help other cybersecurity learners.
 
 ---
-## CTFs Writeups Structure 🔐
+## ## 📁 Repository Structure
 
+```text
 CTF-Writeups/
 │
 ├── README.md
@@ -97,6 +98,7 @@ CTF-Writeups/
 │   └── Westbound.md
 │
 └── Screenshots/
+```
 
 ---
 
