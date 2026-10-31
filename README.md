@@ -69,6 +69,36 @@ My documentation focuses on:
 My goal is to maintain a growing technical knowledge base while sharing insights that may help other cybersecurity learners.
 
 ---
+## CTFs Writeups Structure 🔐
+
+CTF-Writeups/
+│
+├── README.md
+│
+├── Cryptography/
+│   ├── The-Forgotten-Vault.md
+│   ├── Pirate-Multilayer-Encoding.md
+│   └── Poison-ECC-Fault-Attack.md
+│
+├── Digital-Forensics/
+│   └── Deleted-Pirate-Journal.md
+│
+├── Steganography/
+│   └── Operation-Dead-Drop.md
+│
+├── Scripts/
+│   └── aes_vault_solver.py
+│
+├── Investigations/
+│   ├── ARGON-The-Silent-Vault.md
+│   ├── Cursed-Encryption-Oracle.md
+│   ├── HACKITUP-Logo-Steganography.md
+│   ├── Webhack-Solutions-QR.md
+│   └── Westbound.md
+│
+└── Screenshots/
+
+---
 
 ## 🧠 What CTFs Have Taught Me
 
