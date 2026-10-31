@@ -1,150 +1,70 @@
-# 🚩 Capture The Flag (CTF) Write-ups
+# CTF Write-ups | Cybersecurity Portfolio
 
-### 🔐 Exploring Cybersecurity | Learning Through Challenges | Documenting the Journey
+A collection of my Capture The Flag (CTF) investigations and write-ups, covering **cryptography**, **digital forensics**, **steganography**, **encoding**, and related security techniques.
 
-Welcome to my CTF Write-ups repository!
+I document the problem, the vulnerability or clue, tools used, the solving approach, the outcome, and what I learned. **Completed challenges and ongoing investigations are kept separate.**
 
-I'm Radhika Upadhyay, a cybersecurity enthusiast with a strong interest in ethical hacking, offensive security, digital forensics, and security research.
+> **Publication note:** These notes are reconstructed from my documented challenge work. I will add original screenshots and scripts as available. I only publish full flags after checking the event's write-up and disclosure rules.
 
-This repository documents my participation in Capture The Flag (CTF) competitions, hands-on cybersecurity challenges, and practical security investigations.
+## Solved challenges
 
-For me, CTFs are more than just finding flags. They are opportunities to think critically, explore vulnerabilities, experiment with different approaches, and understand how cybersecurity concepts work in real-world scenarios.
+| Challenge | Category | Write-up |
+|---|---|---|
+| The Forgotten Vault | AES-128 / weak key derivation | [Read](Cryptography/The-Forgotten-Vault.md) |
+| Pirate Multilayer Encoding | Base62 / Base58 / Base32 | [Read](Cryptography/Pirate-Multilayer-Encoding.md) |
+| Poison ECC Fault Attack | Elliptic-curve fault analysis | [Read](Cryptography/Poison-ECC-Fault-Attack.md) |
+| Deleted Pirate Journal | E01 / NTFS / Vigenère | [Read](Digital-Forensics/Deleted-Pirate-Journal.md) |
+| Operation Dead Drop | Image LSB / Base32 | [Read](Steganography/Operation-Dead-Drop.md) |
 
----
+## Ongoing / unresolved investigations
 
-## 🚩 CTF Participation & Experience
+| Challenge | Category | Notes |
+|---|---|---|
+| Cursed Encryption Oracle | Chosen-plaintext cryptography | [Read](Investigations/Cursed-Encryption-Oracle.md) |
+| ARGON: The Silent Vault | ECDSA / lattices / RSA / Argon2id | [Read](Investigations/ARGON-The-Silent-Vault.md) |
+| HACKITUP Logo | JPEG steganography | [Read](Investigations/HACKITUP-Logo-Steganography.md) |
+| Webhack Solutions QR | QR / OSINT | [Read](Investigations/Webhack-Solutions-QR.md) |
+| Westbound | Network forensics | [Read](Investigations/Westbound.md) |
 
-I actively participate in cybersecurity CTF competitions and challenges to strengthen my technical knowledge, analytical thinking, and practical problem-solving abilities.
+## Tools & skills
 
-Through these experiences, I have explored different security domains, worked with various tools, investigated vulnerabilities, and developed a deeper understanding of offensive and defensive security concepts.
+Python, Kali Linux, CyberChef, Wireshark, Sleuth Kit (`fls`, `icat`, `mmls`), libewf, Binwalk, ExifTool, StegSeek, cryptographic primitives, and cryptanalysis.
 
-Every challenge brings a new learning opportunity, whether it's successfully capturing a flag, discovering an unfamiliar technique, or understanding why a particular approach didn't work.
-
----
-
-## 🔎 Cybersecurity Domains Explored
-
-| Domain | Areas of Exploration |
-|--------|---------------------|
-| 🌐 Web Exploitation | Web vulnerabilities, authentication, HTTP requests, and web security |
-| 🔍 OSINT | Open-source intelligence gathering, investigation, and information analysis |
-| 🖼️ Steganography | Hidden data extraction, image analysis, and metadata investigation |
-| 🔐 Cryptography | Encryption, encoding, decoding, and cryptographic challenges |
-| 🔬 Digital Forensics | File analysis, metadata examination, and digital evidence investigation |
-| ⚙️ Reverse Engineering | Program analysis, code inspection, and understanding application behavior |
-| 🐧 Linux & CLI | Linux commands, filesystem investigation, and command-line analysis |
-| 🤖 AI/LLM Security | AI security challenges, prompt injection, and model behavior analysis |
-
----
-
-## 🛠️ Tools & Technologies Explored
-
-**Security & Analysis Tools**
-
-`Burp Suite` `Wireshark` `Nmap` `ExifTool` `Binwalk` `CyberChef`
-
-**Programming & Scripting**
-
-`Python` `Bash`
-
-**Platforms & Environments**
-
-`Kali Linux` `Linux CLI`
-
----
-
-## 📝 About My Write-ups
-
-Each write-up reflects my approach to understanding and investigating cybersecurity challenges.
-
-My documentation focuses on:
-
-- Understanding the challenge and identifying its objectives.
-- Analyzing available information and potential vulnerabilities.
-- Exploring tools, commands, and security techniques.
-- Explaining the reasoning behind different approaches.
-- Documenting the process of discovering and capturing flags.
-- Reflecting on challenges faced and lessons learned.
-
-My goal is to maintain a growing technical knowledge base while sharing insights that may help other cybersecurity learners.
-
----
-## ## 📁 Repository Structure
+## Repository structure
 
 ```text
 CTF-Writeups/
-│
 ├── README.md
-│
 ├── Cryptography/
 │   ├── The-Forgotten-Vault.md
 │   ├── Pirate-Multilayer-Encoding.md
 │   └── Poison-ECC-Fault-Attack.md
-│
 ├── Digital-Forensics/
 │   └── Deleted-Pirate-Journal.md
-│
 ├── Steganography/
 │   └── Operation-Dead-Drop.md
-│
-├── Scripts/
-│   └── aes_vault_solver.py
-│
 ├── Investigations/
-│   ├── ARGON-The-Silent-Vault.md
 │   ├── Cursed-Encryption-Oracle.md
+│   ├── ARGON-The-Silent-Vault.md
 │   ├── HACKITUP-Logo-Steganography.md
 │   ├── Webhack-Solutions-QR.md
 │   └── Westbound.md
-│
+├── Scripts/
+│   └── aes_vault_solver.py
 └── Screenshots/
 ```
 
----
+## Reproducing the AES vault solve
 
-## 🧠 What CTFs Have Taught Me
+The sample solver in [`Scripts/aes_vault_solver.py`](Scripts/aes_vault_solver.py) takes a dictionary file and the original hexadecimal ciphertext (embedded in the script). Install `pycryptodome` and run:
 
-CTF challenges have helped me understand that cybersecurity is not simply about knowing tools or commands.
+```bash
+python3 -m pip install pycryptodome
+python3 Scripts/aes_vault_solver.py /path/to/wordlist.txt
+```
 
-It's about developing the ability to:
+For the other challenges, see individual write-ups for available reproduction details and limitations.
 
-- Think critically and approach problems from different perspectives.
-- Understand how vulnerabilities arise and how they can be exploited.
-- Investigate unfamiliar systems and technologies.
-- Adapt when an initial approach fails.
-- Connect theoretical cybersecurity concepts with practical applications.
-- Stay curious, persistent, and committed to continuous learning.
+## Ethics
 
-Every solved challenge strengthens my confidence, while every unsolved challenge highlights something new to explore.
-
----
-
-## 🎯 Purpose of This Repository
-
-This repository serves as a record of my continuous learning and growth in cybersecurity.
-
-Through these write-ups, I aim to document my technical progress, strengthen my understanding of security concepts, and contribute to the cybersecurity learning community.
-
-As I continue participating in CTF competitions and exploring new security domains, this repository will evolve alongside my skills and experience.
-
----
-
-## ⚠️ Ethical Disclaimer
-
-All documented activities are performed within authorized CTF competitions, cybersecurity labs, and educational environments.
-
-The content is intended solely for educational purposes, ethical security research, and knowledge sharing.
-
-Challenge solutions are shared only when permitted by the respective organizers.
-
----
-
-<div align="center">
-
-### 🔐 Think Critically. Investigate Deeply. Learn Continuously.
-
-**Beyond the Flag — Understanding the Why Behind Every Challenge. 🚩**
-
-*— Radhika Upadhyay*
-
-</div>
+All techniques described here were applied in authorized CTF/lab environments. Challenge flags and challenge-host details should not be used outside those environments. Please follow event publication policies.
